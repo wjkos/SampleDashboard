@@ -1,0 +1,35 @@
+.data-bar{
+    border-radius: 4px;
+}
+.table-container{
+    max-width: 600px;
+    /* margin: 0 auto; */
+    overflow-y: auto;
+    max-height: 855px;
+    float:left;
+}
+.timestamp-column{
+    width: 20%;
+}
+.impressions-column{
+    width: 20%;
+}
+.clicks-column{
+    width: 20%;
+}
+.cost-column{
+    width: 20%;
+}
+.conversions-column{
+    width: 20%;
+}
+.mat-table{
+    width: 100%;
+}
+.mat-header-cell{
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+.mat-row:hover{
+    background-color: rgb(155, 200, 255);
+}

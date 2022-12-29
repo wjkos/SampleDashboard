@@ -1,0 +1,48 @@
+
+<mat-slide-toggle [checked]="showDataBars" (change)="showDataBars=!showDataBars"></mat-slide-toggle>
+  <div class="mat-elevation-z2 table-container">
+
+    
+
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="impressions">
+  
+      <ng-container matColumnDef="timestamp" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="timestamp-column"> Timestamp </th>
+        <td mat-cell *matCellDef="let row"> {{row.timestamp | date: 'medium' }} </td>
+      </ng-container>
+      <ng-container matColumnDef="impressions" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="impressions-column"> Impressions </th>
+        <td mat-cell *matCellDef="let row"> 
+            <div class="data-bar" [ngStyle]="{'background-color': showDataBars?'#cdeffb':''}"
+            [style]="'width:' + (row.impressions*100/this.maxValues.impressions) + '%;'">{{row.impressions}}</div> 
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="clicks" class="clicks-column">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="clicks-column"> Clicks </th>
+        <td mat-cell *matCellDef="let row">
+            <div class="data-bar" [ngStyle]="{'background-color': showDataBars?'#f9d7fc':''}"
+            [style]="'width:' + (row.clicks*100/this.maxValues.clicks) + '%;'">{{row.clicks}}</div>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="cost" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="cost-column"> Cost </th>
+        <td mat-cell *matCellDef="let row">
+            <div class="data-bar" [ngStyle]="{'background-color': showDataBars?'#fff1ca':''}"
+            [style]="'width:' + (row.cost*100/this.maxValues.cost) + '%; background-color: #e1e1e1;'">{{row.cost}}</div>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="conversions" class="conversions-column">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="conversions-column"> Conversions </th>
+        <td mat-cell *matCellDef="let row">
+            <div class="data-bar" [ngStyle]="{'background-color': showDataBars?'#ceffed':''}"
+            [style]="'width:' + row.conversions*100/this.maxValues.conversions+'%; background-color: #e1e1e1;'">{{row.conversions}}</div>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+</div>
+  
+  
