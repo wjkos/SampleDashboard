@@ -7,7 +7,7 @@ declare var google: any;
 })
 export class ChartsService {
 
-  static impressionsData = [];
+  static impressionsData = [];  // holds the data in a format required by Google charts
   static clicksData = [];
   static costData = [];
   static conversionsData = [];

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import WebsiteMetrics from "../data/sample.json";
 
 @Component({
   selector: 'app-main-host',
@@ -7,8 +6,6 @@ import WebsiteMetrics from "../data/sample.json";
   styleUrls: ['./main-host.component.css']
 })
 export class MainHostComponent implements OnInit {
-
-  values: any;
 
   constructor() { }
 

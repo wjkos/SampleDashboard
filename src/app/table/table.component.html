@@ -2,8 +2,6 @@
 <mat-slide-toggle [checked]="showDataBars" (change)="showDataBars=!showDataBars"></mat-slide-toggle>
   <div class="mat-elevation-z2 table-container">
 
-    
-
     <table mat-table [dataSource]="dataSource" matSort matSortActive="impressions">
   
       <ng-container matColumnDef="timestamp" >
