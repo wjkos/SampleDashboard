@@ -13,10 +13,10 @@ export class ImpressionsChartComponent implements OnInit {
 
   ngOnInit(): void {
     google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(this.drawChart);
+    google.charts.setOnLoadCallback(() => { this.drawChart(this.chartService) });  // pass an arrow func to preserve "this"
   }
-  drawChart(){
-    let data = google.visualization.arrayToDataTable(ChartsService.impressionsData);
+  drawChart(chartService){
+    let data = google.visualization.arrayToDataTable(chartService.impressionsData);
     let view = new google.visualization.DataView(data);
     view.setColumns([0, 1, 2]);
 
